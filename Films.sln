@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Films.DAL", "Films.DAL\Film
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Films.BLL", "Films.BLL\Films.BLL.csproj", "{45399978-084E-4691-8121-2CBEBC05168A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Films.Model", "Films.Model\Films.Model.csproj", "{7CB73E5D-ADA9-4BD8-99D8-AFD4744BAFC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +33,9 @@ Global
 		{45399978-084E-4691-8121-2CBEBC05168A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45399978-084E-4691-8121-2CBEBC05168A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45399978-084E-4691-8121-2CBEBC05168A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB73E5D-ADA9-4BD8-99D8-AFD4744BAFC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB73E5D-ADA9-4BD8-99D8-AFD4744BAFC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB73E5D-ADA9-4BD8-99D8-AFD4744BAFC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB73E5D-ADA9-4BD8-99D8-AFD4744BAFC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
