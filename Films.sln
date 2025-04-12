@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Films.Desktop", "Films.Desktop\Films.Desktop.csproj", "{8BD0AB9D-9D9F-4F5D-BCA6-11615F8B383C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "others", "others", "{9866A025-2268-47B3-BE63-468587F93532}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Films.DAL", "Films.DAL\Films.DAL.csproj", "{E1588F1F-C288-4DC6-B831-065194645498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Films.BLL", "Films.BLL\Films.BLL.csproj", "{45399978-084E-4691-8121-2CBEBC05168A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BD0AB9D-9D9F-4F5D-BCA6-11615F8B383C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD0AB9D-9D9F-4F5D-BCA6-11615F8B383C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD0AB9D-9D9F-4F5D-BCA6-11615F8B383C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BD0AB9D-9D9F-4F5D-BCA6-11615F8B383C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1588F1F-C288-4DC6-B831-065194645498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1588F1F-C288-4DC6-B831-065194645498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1588F1F-C288-4DC6-B831-065194645498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1588F1F-C288-4DC6-B831-065194645498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45399978-084E-4691-8121-2CBEBC05168A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45399978-084E-4691-8121-2CBEBC05168A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45399978-084E-4691-8121-2CBEBC05168A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45399978-084E-4691-8121-2CBEBC05168A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
