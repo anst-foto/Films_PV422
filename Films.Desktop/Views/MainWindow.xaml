@@ -5,7 +5,13 @@
 
         Title="MainWindow"
 
-        Height="450" Width="800">
+        Height="450" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal">
+
+    <Window.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </Window.Resources>
 
     <Window.DataContext>
         <vm:MainWindowViewModel/>
@@ -21,18 +27,22 @@
 
             <Label Content="Поиск"
                    Target="{Binding ElementName=SearchInput}"
+                   Style="{StaticResource StyleLabel}"
                    Grid.Column="0"/>
 
             <TextBox x:Name="SearchInput"
                      Text="{Binding Search}"
+                     Style="{StaticResource StyleInput}"
                      Grid.Column="1"/>
 
             <StackPanel Orientation="Horizontal"
                         Grid.Column="2">
                 <Button Content="Найти"
-                        Command="{Binding CommandSearch}"/>
+                        Command="{Binding CommandSearch}"
+                        Style="{StaticResource StyleButtonSearch}"/>
                 <Button Content="Очистить"
-                        Command="{Binding CommandClearSearch}"/>
+                        Command="{Binding CommandClearSearch}"
+                        Style="{StaticResource StyleButtonClear}"/>
             </StackPanel>
         </Grid>
 
@@ -45,6 +55,7 @@
             <ListView ItemsSource="{Binding Films}"
                       SelectedItem="{Binding SelectedFilm}"
                       SelectionMode="Single"
+                      Style="{StaticResource StyleListView}"
                       Grid.Column="0">
                 <ListView.View>
                     <GridView>
@@ -67,9 +78,12 @@
 
                         <Label Content="ID"
                                Target="{Binding ElementName=InputId}"
+                               Style="{StaticResource StyleLabel}"
                                Grid.Column="0"/>
                         <TextBox x:Name="InputId"
                                  Text="{Binding ID}"
+                                 Style="{StaticResource StyleInput}"
+                                 IsReadOnly="True"
                                  Grid.Column="1"/>
                     </Grid>
 
@@ -81,9 +95,11 @@
 
                         <Label Content="Название"
                                Target="{Binding ElementName=InputTitle}"
+                               Style="{StaticResource StyleLabel}"
                                Grid.Column="0"/>
                         <TextBox x:Name="InputTitle"
                                  Text="{Binding Title}"
+                                 Style="{StaticResource StyleInput}"
                                  Grid.Column="1"/>
                     </Grid>
 
@@ -95,9 +111,11 @@
 
                         <Label Content="Описание"
                                Target="{Binding ElementName=InputDescription}"
+                               Style="{StaticResource StyleLabel}"
                                Grid.Column="0"/>
                         <TextBox x:Name="InputDescription"
                                  Text="{Binding Description}"
+                                 Style="{StaticResource StyleInput}"
                                  Grid.Column="1"/>
                     </Grid>
 
@@ -109,20 +127,25 @@
 
                         <Label Content="Дата выпуска"
                                Target="{Binding ElementName=InputReleaseDate}"
+                               Style="{StaticResource StyleLabel}"
                                Grid.Column="0"/>
                         <DatePicker x:Name="InputReleaseDate"
                                     SelectedDate="{Binding ReleaseDate}"
+                                    Style="{StaticResource StyleDatePicker}"
                                     Grid.Column="1"/>
                     </Grid>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <Button Content="Сохранить"
-                            Command="{Binding CommandSave}"/>
+                            Command="{Binding CommandSave}"
+                            Style="{StaticResource StyleButtonSave}"/>
                     <Button Content="Удалить"
-                            Command="{Binding CommandDelete}"/>
+                            Command="{Binding CommandDelete}"
+                            Style="{StaticResource StyleButtonDelete}"/>
                     <Button Content="Очистить"
-                            Command="{Binding CommandClear}"/>
+                            Command="{Binding CommandClear}"
+                            Style="{StaticResource StyleButtonClear}"/>
                 </StackPanel>
             </StackPanel>
         </Grid>
