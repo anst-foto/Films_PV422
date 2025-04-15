@@ -7,11 +7,11 @@ namespace Films.BLL;
 
 public class Service : IService
 {
-    private ICrud _crud;
+    private readonly ICrud _crud;
 
-    public Service(ICrud crud)
+    public Service(string connectionString)
     {
-        _crud = crud;
+        _crud = new Db(connectionString);
     }
 
     public bool Create(Film film)
