@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Films.DAL\Films.DAL.csproj" />
-    <ProjectReference Include="..\Films.Model\Films.Model.csproj" />
+    <ProjectReference Include="..\Films.DAL\Films.DAL.csproj"/>
+    <ProjectReference Include="..\Films.Model\Films.Model.csproj"/>
   </ItemGroup>
 
 </Project>

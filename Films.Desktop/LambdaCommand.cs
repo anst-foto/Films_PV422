@@ -11,12 +11,18 @@ public class LambdaCommand : ICommand
     public LambdaCommand(Action<object?> execute, Predicate<object?>? canExecute = null)
     {
         _execute = execute;
-        _canExecute = canExecute ?? ( _ => true );
+        _canExecute = canExecute ?? (_ => true);
     }
 
-    public bool CanExecute(object? parameter) => _canExecute(parameter);
+    public bool CanExecute(object? parameter)
+    {
+        return _canExecute(parameter);
+    }
 
-    public void Execute(object? parameter) => _execute(parameter);
+    public void Execute(object? parameter)
+    {
+        _execute(parameter);
+    }
 
     public event EventHandler? CanExecuteChanged
     {

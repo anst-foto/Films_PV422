@@ -10,46 +10,46 @@
         WindowState="Normal">
 
     <Window.Resources>
-        <ResourceDictionary Source="Styles.xaml"/>
+        <ResourceDictionary Source="Styles.xaml" />
     </Window.Resources>
 
     <Window.DataContext>
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowViewModel />
     </Window.DataContext>
 
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Label Content="Поиск"
                    Target="{Binding ElementName=SearchInput}"
                    Style="{StaticResource StyleLabel}"
-                   Grid.Column="0"/>
+                   Grid.Column="0" />
 
             <TextBox x:Name="SearchInput"
                      Text="{Binding Search}"
                      Style="{StaticResource StyleInput}"
-                     Grid.Column="1"/>
+                     Grid.Column="1" />
 
             <StackPanel Orientation="Horizontal"
                         Grid.Column="2">
                 <Button Content="Найти"
                         Command="{Binding CommandSearch}"
-                        Style="{StaticResource StyleButtonSearch}"/>
+                        Style="{StaticResource StyleButtonSearch}" />
                 <Button Content="Очистить"
                         Command="{Binding CommandClearSearch}"
-                        Style="{StaticResource StyleButtonClear}"/>
+                        Style="{StaticResource StyleButtonClear}" />
             </StackPanel>
         </Grid>
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
             </Grid.ColumnDefinitions>
 
             <ListView ItemsSource="{Binding Films}"
@@ -60,9 +60,9 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Название"
-                                        DisplayMemberBinding="{Binding Title}"/>
+                                        DisplayMemberBinding="{Binding Title}" />
                         <GridViewColumn Header="Дата выпуска"
-                                        DisplayMemberBinding="{Binding ReleaseDate}"/>
+                                        DisplayMemberBinding="{Binding ReleaseDate}" />
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -72,80 +72,80 @@
                 <StackPanel Orientation="Vertical">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="3.5*"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="3.5*" />
                         </Grid.ColumnDefinitions>
 
                         <Label Content="ID"
                                Target="{Binding ElementName=InputId}"
                                Style="{StaticResource StyleLabel}"
-                               Grid.Column="0"/>
+                               Grid.Column="0" />
                         <TextBox x:Name="InputId"
                                  Text="{Binding ID}"
                                  Style="{StaticResource StyleInput}"
                                  IsReadOnly="True"
-                                 Grid.Column="1"/>
+                                 Grid.Column="1" />
                     </Grid>
 
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="3.5*"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="3.5*" />
                         </Grid.ColumnDefinitions>
 
                         <Label Content="Название"
                                Target="{Binding ElementName=InputTitle}"
                                Style="{StaticResource StyleLabel}"
-                               Grid.Column="0"/>
+                               Grid.Column="0" />
                         <TextBox x:Name="InputTitle"
                                  Text="{Binding Title}"
                                  Style="{StaticResource StyleInput}"
-                                 Grid.Column="1"/>
+                                 Grid.Column="1" />
                     </Grid>
 
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="3.5*"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="3.5*" />
                         </Grid.ColumnDefinitions>
 
                         <Label Content="Описание"
                                Target="{Binding ElementName=InputDescription}"
                                Style="{StaticResource StyleLabel}"
-                               Grid.Column="0"/>
+                               Grid.Column="0" />
                         <TextBox x:Name="InputDescription"
                                  Text="{Binding Description}"
                                  Style="{StaticResource StyleInput}"
-                                 Grid.Column="1"/>
+                                 Grid.Column="1" />
                     </Grid>
 
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="3.5*"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="3.5*" />
                         </Grid.ColumnDefinitions>
 
                         <Label Content="Дата выпуска"
                                Target="{Binding ElementName=InputReleaseDate}"
                                Style="{StaticResource StyleLabel}"
-                               Grid.Column="0"/>
+                               Grid.Column="0" />
                         <DatePicker x:Name="InputReleaseDate"
                                     SelectedDate="{Binding ReleaseDate}"
                                     Style="{StaticResource StyleDatePicker}"
-                                    Grid.Column="1"/>
+                                    Grid.Column="1" />
                     </Grid>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <Button Content="Сохранить"
                             Command="{Binding CommandSave}"
-                            Style="{StaticResource StyleButtonSave}"/>
+                            Style="{StaticResource StyleButtonSave}" />
                     <Button Content="Удалить"
                             Command="{Binding CommandDelete}"
-                            Style="{StaticResource StyleButtonDelete}"/>
+                            Style="{StaticResource StyleButtonDelete}" />
                     <Button Content="Очистить"
                             Command="{Binding CommandClear}"
-                            Style="{StaticResource StyleButtonClear}"/>
+                            Style="{StaticResource StyleButtonClear}" />
                 </StackPanel>
             </StackPanel>
         </Grid>

@@ -17,6 +17,7 @@ public class MainWindowViewModel : ViewModelBase
     #region Fields
 
     private string? _search;
+
     public string? Search
     {
         get => _search;
@@ -24,6 +25,7 @@ public class MainWindowViewModel : ViewModelBase
     }
 
     private Guid? _id;
+
     public Guid? ID
     {
         get => _id;
@@ -31,6 +33,7 @@ public class MainWindowViewModel : ViewModelBase
     }
 
     private string? _title;
+
     public string? Title
     {
         get => _title;
@@ -38,6 +41,7 @@ public class MainWindowViewModel : ViewModelBase
     }
 
     private string? _description;
+
     public string? Description
     {
         get => _description;
@@ -45,6 +49,7 @@ public class MainWindowViewModel : ViewModelBase
     }
 
     private DateTime? _releaseDate;
+
     public DateTime? ReleaseDate
     {
         get => _releaseDate;
@@ -54,6 +59,7 @@ public class MainWindowViewModel : ViewModelBase
     public ObservableCollection<Film> Films { get; } = [];
 
     private Film? _selectedFilm;
+
     public Film? SelectedFilm
     {
         get => _selectedFilm;
@@ -79,29 +85,29 @@ public class MainWindowViewModel : ViewModelBase
         LoadData();
 
         CommandClearSearch = new LambdaCommand(
-            execute: _ => ClearSearch(),
-            canExecute: _ => _service is not null &&
-                             !string.IsNullOrEmpty(Search));
+            _ => ClearSearch(),
+            _ => _service is not null &&
+                 !string.IsNullOrEmpty(Search));
         CommandSearch = new LambdaCommand(
-            execute: _ => Find(),
-            canExecute: _ => _service is not null &&
-                             !string.IsNullOrEmpty(Search));
+            _ => Find(),
+            _ => _service is not null &&
+                 !string.IsNullOrEmpty(Search));
 
         CommandSave = new LambdaCommand(
-            execute: _ => Save(),
-            canExecute: _ => _service is not null &&
-                             !string.IsNullOrEmpty(Title) &&
-                             !string.IsNullOrEmpty(Description) &&
-                             !string.IsNullOrEmpty(ReleaseDate.ToString()));
+            _ => Save(),
+            _ => _service is not null &&
+                 !string.IsNullOrEmpty(Title) &&
+                 !string.IsNullOrEmpty(Description) &&
+                 !string.IsNullOrEmpty(ReleaseDate.ToString()));
         CommandDelete = new LambdaCommand(
-            execute: _ => Delete(),
-            canExecute: _ => _service is not null &&
-                             SelectedFilm is not null);
+            _ => Delete(),
+            _ => _service is not null &&
+                 SelectedFilm is not null);
         CommandClear = new LambdaCommand(
-            execute: _ => Clear(),
-            canExecute: _ => _service is not null &&
-                             (!string.IsNullOrEmpty(Title) ||
-                             !string.IsNullOrEmpty(ReleaseDate.ToString())));
+            _ => Clear(),
+            _ => _service is not null &&
+                 (!string.IsNullOrEmpty(Title) ||
+                  !string.IsNullOrEmpty(ReleaseDate.ToString())));
     }
 
     #region Methods
@@ -118,10 +124,10 @@ public class MainWindowViewModel : ViewModelBase
         if (string.IsNullOrEmpty(connectionString))
         {
             MessageBox.Show(
-                messageBoxText:"Не удалось получить строку подключения к базе данных",
-                caption: "Ошибка",
+                "Не удалось получить строку подключения к базе данных",
+                "Ошибка",
                 MessageBoxButton.OK,
-                icon:MessageBoxImage.Error);
+                MessageBoxImage.Error);
 
             _service = null;
         }
@@ -143,10 +149,7 @@ public class MainWindowViewModel : ViewModelBase
     private void FillFilms(IEnumerable<Film> films)
     {
         Films.Clear();
-        foreach (var film in films)
-        {
-            Films.Add(film);
-        }
+        foreach (var film in films) Films.Add(film);
     }
 
     private void Find()
