@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Films.Desktop;
+namespace Films.Desktop.Views;
 
 public partial class MainWindow : Window
 {
