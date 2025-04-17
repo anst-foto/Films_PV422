@@ -63,7 +63,17 @@ public class MainWindowViewModel : ViewModelBase
     public Film? SelectedFilm
     {
         get => _selectedFilm;
-        set => SetField(ref _selectedFilm, value);
+        set
+        {
+            var result = SetField(ref _selectedFilm, value);
+
+            if (!result) return;
+
+            ID = _selectedFilm?.Id;
+            Title = _selectedFilm?.Title;
+            Description = _selectedFilm?.Description;
+            ReleaseDate = _selectedFilm?.ReleaseDate;
+        }
     }
 
     #endregion
@@ -172,10 +182,11 @@ public class MainWindowViewModel : ViewModelBase
             Id = Guid.NewGuid(),
             Title = Title!,
             Description = Description,
-            ReleaseDate = ReleaseDate!.Value
+            ReleaseDate = DateTime.SpecifyKind(ReleaseDate!.Value, DateTimeKind.Utc)
         });
 
         Clear();
+        LoadData();
     }
 
     private void Delete()

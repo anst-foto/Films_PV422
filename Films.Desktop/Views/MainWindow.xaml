@@ -31,7 +31,7 @@
                    Grid.Column="0" />
 
             <TextBox x:Name="SearchInput"
-                     Text="{Binding Search}"
+                     Text="{Binding Search, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource StyleInput}"
                      Grid.Column="1" />
 
@@ -49,7 +49,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
 
             <ListView ItemsSource="{Binding Films}"
@@ -62,7 +62,7 @@
                         <GridViewColumn Header="Название"
                                         DisplayMemberBinding="{Binding Title}" />
                         <GridViewColumn Header="Дата выпуска"
-                                        DisplayMemberBinding="{Binding ReleaseDate}" />
+                                        DisplayMemberBinding="{Binding ReleaseDateAsString}" />
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -81,7 +81,7 @@
                                Style="{StaticResource StyleLabel}"
                                Grid.Column="0" />
                         <TextBox x:Name="InputId"
-                                 Text="{Binding ID}"
+                                 Text="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Style="{StaticResource StyleInput}"
                                  IsReadOnly="True"
                                  Grid.Column="1" />
@@ -98,7 +98,7 @@
                                Style="{StaticResource StyleLabel}"
                                Grid.Column="0" />
                         <TextBox x:Name="InputTitle"
-                                 Text="{Binding Title}"
+                                 Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Style="{StaticResource StyleInput}"
                                  Grid.Column="1" />
                     </Grid>
@@ -114,7 +114,7 @@
                                Style="{StaticResource StyleLabel}"
                                Grid.Column="0" />
                         <TextBox x:Name="InputDescription"
-                                 Text="{Binding Description}"
+                                 Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Style="{StaticResource StyleInput}"
                                  Grid.Column="1" />
                     </Grid>
@@ -130,7 +130,7 @@
                                Style="{StaticResource StyleLabel}"
                                Grid.Column="0" />
                         <DatePicker x:Name="InputReleaseDate"
-                                    SelectedDate="{Binding ReleaseDate}"
+                                    SelectedDate="{Binding ReleaseDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                     Style="{StaticResource StyleDatePicker}"
                                     Grid.Column="1" />
                     </Grid>
