@@ -18,11 +18,17 @@
     </PackageReference>
 
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.*"/>
+
+    <PackageReference Include="NLog" Version="5.*" />
+    <PackageReference Include="NLog.Schema" Version="5.*" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

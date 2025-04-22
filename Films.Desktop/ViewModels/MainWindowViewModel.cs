@@ -143,7 +143,7 @@ public class MainWindowViewModel : ViewModelBase
         }
         else
         {
-            _service = new Service(connectionString);
+            _service = new ServiceWithCache(new Service(connectionString));
         }
     }
 
